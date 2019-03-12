@@ -19,5 +19,18 @@ exports.employee_all = function (req, res){
 };
 
 exports.employee_add = function(req, res){
-    let employee = new Employee()
-}
+    let employee = new Employee(
+        {
+            name: req.body.name,
+            adress: req.body.adress,
+            phone: req.body.phone
+        }
+    );
+
+    employee.save(function(err){
+        if(err){
+            return next(err);
+        }
+        res.status(200).json(employee);
+    })
+};
