@@ -4,12 +4,12 @@ exports.test = function (req, res) {
     res.send('Greetings from the Test controller!');
 };
 
-exports.employee_details = function (req, res){
-    Employee.findById(req.param.id, function(err, employee){
-        if(err) return next(err);
-        res.send(employee);
+exports.employee_details = function (req, res) {
+    Employee.findById(req.params.id, function (err, employee) {
+      if (err) return next(err);
+      res.send(employee);
     })
-};
+  };
 
 exports.employee_all = function (req, res){
     Employee.find( function(err, employee){
@@ -36,7 +36,7 @@ exports.employee_add = function(req, res){
 };
 
 exports.employee_delete = function (req, res) {
-    employee.findByIdAndRemove(req.params.id, function (err) {
+    Employee.findByIdAndRemove(req.params.id, function (err) {
       if (err) return next(err);
       // res.send('Deleted successfully!');
       res.status(200).json({});
