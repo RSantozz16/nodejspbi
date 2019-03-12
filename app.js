@@ -5,7 +5,7 @@ const employee = require('./routes/employee.route');
 const app = express();
 
 const mongoose = require('mongoose');
-let databaseUrl = 'mongodb://localhost:27017/employee';
+let databaseUrl = 'mongodb://localhost:27017/nodejspbi';
 const mongoDB = process.env.MONGODB_URI || databaseUrl;
 mongoose.connect(mongoDB, {useNewUrlParser: true});
 mongoose.Promise = global.Promise;

@@ -22,7 +22,7 @@ exports.employee_add = function(req, res){
     let employee = new Employee(
         {
             name: req.body.name,
-            adress: req.body.adress,
+            address: req.body.address,
             phone: req.body.phone
         }
     );
@@ -34,3 +34,11 @@ exports.employee_add = function(req, res){
         res.status(200).json(employee);
     })
 };
+
+exports.employee_delete = function (req, res) {
+    employee.findByIdAndRemove(req.params.id, function (err) {
+      if (err) return next(err);
+      // res.send('Deleted successfully!');
+      res.status(200).json({});
+    })
+  };
