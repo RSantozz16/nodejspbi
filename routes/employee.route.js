@@ -8,4 +8,6 @@ router.get('/', employee_controller.employee_all);
 router.get('/:id', employee_controller.employee_details);
 
 router.post('/', employee_controller.employee_add);
+router.delete('/:id', employee_controller.employee_delete);
+router.put('/:id', employee_controller.employee_update);
 module.exports = router;
